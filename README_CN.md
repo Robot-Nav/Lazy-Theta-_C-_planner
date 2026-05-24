@@ -1,4 +1,4 @@
-# ThetaStar_CPP
+# Lazy ThetaStar_planner
 
 **Lazy Theta* 路径规划算法的纯 C++ 实现，完全脱离 ROS/ROS2 依赖。**
 

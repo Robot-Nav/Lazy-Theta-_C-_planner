@@ -1,0 +1,11 @@
+<launch>
+  <!-- Theta* Pioneer 完整启动文件 -->
+  <!-- 同时启动Gazebo仿真和导航节点 -->
+
+  <!-- Gazebo物理仿真 -->
+  <include file="$(find theta_star_planner)/launch/theta_star_gazebo.launch"/>
+
+  <!-- 可视化与导航节点 -->
+  <include file="$(find theta_star_planner)/launch/theta_star_visualization.launch"/>
+
+</launch>

@@ -1,0 +1,20 @@
+<launch>
+  <!-- Theta* Gazebo物理仿真启动文件 -->
+  <!-- 仅启动Gazebo仿真环境，不包含导航节点 -->
+
+  <!-- Pioneer robot Gazebo simulation -->
+  <include file="$(find pioneer_utils)/gazebo/launch/bizhang.launch">
+    <arg name="gui" value="true"/>
+  </include>
+
+  <!-- Map server - load static map -->
+  <arg name="map_file" default="$(find theta_star_planner)/map/PM.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen">
+    <param name="frame_id" value="map"/>
+  </node>
+
+  <!-- Static transform from map to odom (will be replaced by localization) -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="map_to_odom" 
+        args="0 0 0 0 0 0 map odom" />
+
+</launch>

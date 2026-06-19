@@ -1,0 +1,20 @@
+<launch>
+  <!-- Theta* 可视化与导航节点启动文件 -->
+  <!-- 启动RViz和导航节点，假设Gazebo已在运行 -->
+
+  <!-- Map file argument -->
+  <arg name="map_file" default="$(find theta_star_planner)/map/PM.yaml"/>
+
+  <!-- Load Theta* parameters from YAML file -->
+  <rosparam file="$(find theta_star_planner)/config/theta_star_params.yaml" command="load" />
+
+  <!-- Override map_file param -->
+  <param name="map_file" value="$(arg map_file)"/>
+
+  <!-- Theta* Navigation Node with Laser Support -->
+  <node name="theta_star_nav" pkg="theta_star_planner" type="theta_star_nav_node" output="screen" required="false"/>
+
+  <!-- RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find theta_star_planner)/rviz/theta_star.rviz" required="false"/>
+
+</launch>

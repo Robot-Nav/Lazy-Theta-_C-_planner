@@ -6,6 +6,14 @@
 
 ---
 
+display:
+<img width="1920" height="1080" alt="" src="https://github.com/user-attachments/assets/6628dabe-ab00-47ee-9cb3-2e0869c13e3c" />
+
+<img width="1920" height="1080" alt="" src="https://github.com/user-attachments/assets/7758303d-066d-4391-a287-cf74f46d6f90" />
+
+
+---
+
 ## 项目简介
 
 **Kinodynamic Lazy Theta\*** 是一种面向非完整约束移动机器人的全局路径规划算法，采用 **"先搜索、后优化"** 的两阶段架构：
